@@ -1,7 +1,5 @@
 import _ from 'lodash';
-import './css/demo1.css';
-import './css/demo2.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './scss/demo.scss';
 
 function component() {
     let element = document.createElement('div');

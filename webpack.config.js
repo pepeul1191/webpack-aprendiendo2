@@ -35,7 +35,7 @@ var fooConfig = Object.assign({}, config, {
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
-                    "sass-loader"
+                    "sass-loader",
                 ]
             }
         ]
@@ -46,7 +46,7 @@ var fooConfig = Object.assign({}, config, {
             // both options are optional
             filename: '[name].css',
             chunkFilename: '[id].css'
-        })
+        }),
     ]
 });
 

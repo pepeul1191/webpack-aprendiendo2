@@ -28,9 +28,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "webpack --mode=production",
     "start": "node server.js",
-    "dev": "webpack-dev-server src/index.js --mode development"
+    "dev": "webpack-dev-server --mode=development"
   },
   "keywords": [],
   "author": "",

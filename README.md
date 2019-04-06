@@ -15,3 +15,4 @@ Fuentes:
 + https://stackoverflow.com/questions/52395155/how-do-i-generate-a-css-file-using-webpack-4-and-mini-css-extract-plugin
 + https://webpack.js.org/configuration/dev-server/
 + https://desarrolloweb.com/articulos/servidor-desarrollo-webpack.html
++ https://webpack.js.org/guides/production/

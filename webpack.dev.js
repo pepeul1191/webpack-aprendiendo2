@@ -9,11 +9,13 @@ var config = {
 
 var config = Object.assign({}, config,
 {
-    name: 'a',
+    name: 'hola',
     mode: 'development',
-    entry: './src/index.js',
+    entry: {
+        index: './src/index.js',
+    },
     output: {
-        filename: './[name].js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'public/dist')
     },
     watch: true, // autoreload ante cambios
@@ -50,6 +52,7 @@ var config = Object.assign({}, config,
             path.join(__dirname, './public'),
             path.join(__dirname, './src'),
         ],
+        publicPath: '/src/',
         compress: true,
         watchContentBase: true,
         hot: true,
@@ -60,7 +63,7 @@ var config = Object.assign({}, config,
         ],
         headers: {
             'Server': 'Ubuntu'
-        }
+        },
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -69,51 +72,7 @@ var config = Object.assign({}, config,
             filename: '[name].css',
             chunkFilename: '[id].css'
         }),
-        new webpack.HotModuleReplacementPlugin(),
-    ]
-},{
-    name: 'a',
-    mode: 'production',
-    entry: './src/index.js',
-    output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, 'public/dist')
-    },
-    watch: false, // autoreload ante cambios
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            // you can specify a publicPath here
-                            // by default it use publicPath in webpackOptions.output
-                            publicPath: '../'
-                        }
-                    },
-                    'css-loader'
-                ]
-            },
-            {
-                test: /\.scss$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    "sass-loader",
-                ]
-            }
-        ],
-    },
-    plugins: [
-        new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // both options are optional
-            filename: '[name].css',
-            chunkFilename: '[id].css'
-        }),
-        // new webpack.HotModuleReplacementPlugin(),
+        //new webpack.HotModuleReplacementPlugin(),
     ]
 });
 

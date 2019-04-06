@@ -12,7 +12,7 @@ var fooConfig = Object.assign({}, config, {
     entry: './src/index.js',
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'public/dist')
     },
     module: {
         rules: [
@@ -38,6 +38,15 @@ var fooConfig = Object.assign({}, config, {
                     "sass-loader",
                 ]
             }
+        ],
+    },
+    devServer: {
+        port: 8080,
+        contentBase: path.join(__dirname, 'public'),
+        compress: true,
+        allowedHosts: [
+            'host.com',
+            '*',
         ]
     },
     plugins: [
@@ -52,5 +61,5 @@ var fooConfig = Object.assign({}, config, {
 
 // Array of Configurations
 module.exports = [
-    fooConfig,        
+    fooConfig,
 ];

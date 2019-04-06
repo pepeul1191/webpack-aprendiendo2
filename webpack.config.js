@@ -7,12 +7,13 @@ var config = {
     module: {},
 };
 
-var devConfig = Object.assign({}, config, {
+var config = Object.assign({}, config,
+{
     name: 'a',
     mode: 'development',
     entry: './src/index.js',
     output: {
-        filename: '[name].js',
+        filename: './[name].js',
         path: path.resolve(__dirname, 'public/dist')
     },
     watch: true, // autoreload ante cambios
@@ -68,11 +69,9 @@ var devConfig = Object.assign({}, config, {
             filename: '[name].css',
             chunkFilename: '[id].css'
         }),
-        // new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
     ]
-});
-
-var devConfig = Object.assign({}, config, {
+},{
     name: 'a',
     mode: 'production',
     entry: './src/index.js',
@@ -107,25 +106,6 @@ var devConfig = Object.assign({}, config, {
             }
         ],
     },
-    devServer: {
-        host: '0.0.0.0',
-        port: 9090,
-        contentBase: [
-            path.join(__dirname, './public'),
-            path.join(__dirname, './src'),
-        ],
-        compress: true,
-        watchContentBase: true,
-        hot: true,
-        inline:true,
-        allowedHosts: [
-            'host.com',
-            '*',
-        ],
-        headers: {
-            'Server': 'Ubuntu'
-        }
-    },
     plugins: [
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
@@ -139,5 +119,5 @@ var devConfig = Object.assign({}, config, {
 
 // Array of Configurations
 module.exports = [
-    devConfig,
+    config,
 ];

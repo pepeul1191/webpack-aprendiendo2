@@ -3,6 +3,6 @@ import District from './models/district';
 
 var x = new District();
 
-alert("XD 112334");
+alert("XD 12");
 
 console.log(x);

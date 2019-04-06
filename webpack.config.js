@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 
 var config = {
     // TODO: Add common Configuration
@@ -14,6 +15,7 @@ var fooConfig = Object.assign({}, config, {
         filename: '[name].js',
         path: path.resolve(__dirname, 'public/dist')
     },
+    watch: true, // autoreload ante cambios
     module: {
         rules: [
             {
@@ -41,13 +43,23 @@ var fooConfig = Object.assign({}, config, {
         ],
     },
     devServer: {
+        host: '0.0.0.0',
         port: 8080,
-        contentBase: path.join(__dirname, 'public'),
+        contentBase: [
+            path.join(__dirname, './public'),
+            path.join(__dirname, './src'),
+        ],
         compress: true,
+        watchContentBase: true,
+        hot: true,
+        inline:true,
         allowedHosts: [
             'host.com',
             '*',
-        ]
+        ],
+        headers: {
+            'Server': 'Ubuntu'
+        }
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -56,6 +68,7 @@ var fooConfig = Object.assign({}, config, {
             filename: '[name].css',
             chunkFilename: '[id].css'
         }),
+        // new webpack.HotModuleReplacementPlugin(),
     ]
 });
 

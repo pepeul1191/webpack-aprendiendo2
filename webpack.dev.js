@@ -13,6 +13,7 @@ var config = Object.assign({}, config,
     mode: 'development',
     entry: {
         index: './src/index.js',
+        table: './src/index_table.js',
     },
     output: {
         filename: '[name].js',

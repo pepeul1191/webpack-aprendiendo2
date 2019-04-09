@@ -16,3 +16,4 @@ Fuentes:
 + https://webpack.js.org/configuration/dev-server/
 + https://desarrolloweb.com/articulos/servidor-desarrollo-webpack.html
 + https://webpack.js.org/guides/production/
++ https://webpack.js.org/concepts/entry-points/

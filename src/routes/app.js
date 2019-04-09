@@ -1,15 +1,16 @@
 import Backbone from 'backbone';
 import $ from 'jquery';
+import HomeView from '../views/home_view';
 import '../scss/demo.scss';
 
 var accessRouter = Backbone.Router.extend({
-  systemView: null,
-  systemPermissionView: null,
-  systemRoleView: null,
-
-  permissionView: null,
-  roleView: null,
-
+  // attributes
+  homeView: null,
+  calendarView: null,
+  autocompleteView: null,
+  tableView: null,
+  uploadView: null,
+  // methods
   initialize: function() {
   },
   routes: {
@@ -30,7 +31,10 @@ var accessRouter = Backbone.Router.extend({
     //window.location.href = BASE_URL + "error/access/404";
   },
   homeRoute: function(){
-    alert('homeRoute');
+    if(this.homeView == null){
+      this.homeView = new HomeView();
+    }
+    this.homeView.render();
   },
   calendarRoute: function(){
     alert('calendarRoute');

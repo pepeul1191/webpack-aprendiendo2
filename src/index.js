@@ -1,5 +1,6 @@
 import './scss/demo.scss';
 import District from './models/district';
+import Table from './libs/table';
 
 var x = new District();
 

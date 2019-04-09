@@ -13,7 +13,7 @@ var config = Object.assign({}, config,
     mode: 'development',
     entry: {
         index: './src/index.js',
-        table: './src/index_table.js',
+        app: './src/routes/app.js',
     },
     output: {
         filename: '[name].js',

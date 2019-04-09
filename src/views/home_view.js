@@ -14,6 +14,7 @@ var HomeView = Backbone.View.extend({
 		$(this.el).html(
       HomeTemplate({
         nombre: 'Pepe',
+        base_url: BASE_URL,
       }))
     ;
 	},

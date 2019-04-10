@@ -1,6 +1,7 @@
 import Backbone from 'backbone';
 import $ from 'jquery';
 import HomeView from '../views/home_view';
+import UploadViewTab from '../views/upload_view';
 import '../scss/demo.scss';
 
 var accessRouter = Backbone.Router.extend({
@@ -46,7 +47,10 @@ var accessRouter = Backbone.Router.extend({
     alert('tableRoute');
   },
   uploadRoute: function(){
-    alert('uploadRoute');
+    if(this.uploadView == null){
+      this.uploadView = new UploadViewTab();
+    }
+    this.uploadView.render();
   },
 });
 

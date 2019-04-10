@@ -4,11 +4,11 @@
     <title>Getting Started</title>
     <link rel="stylesheet" href="dist/app.css">
     <script type="text/javascript">
-      var BASE_URL = "http://localhost:8080/";
+      var BASE_URL = "http://localhost:4567/";
       var STATICS_URL  = "<%= CONSTANTS[:static_url] %>";
       var DATA = null;
-      var CSRF = "<%= CONSTANTS[:csrf][:secret] %>";
-      var CSRF_KEY = "<%= CONSTANTS[:csrf][:key] %>";
+      var CSRF = "csrf_value";
+      var CSRF_KEY = "csrf_key";
       var UPLOAD = "<%= CONSTANTS[:upload][:url] %>";
       var LANG = "sp";
     </script>
@@ -44,7 +44,7 @@
     <!-- end nav -->
     <!-- body -->
     <div class="container" id="workspace">
-      
+
     </div>
     <!-- end body -->
     <script src="./dist/app.js"></script>

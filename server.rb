@@ -369,3 +369,14 @@ post '/estacion/guardar' do
       }.to_json
   end
 end
+
+options '/file/upload' do
+  tempfile = params[:myFile][:tempfile]
+  filename = params[:myFile][:filename]
+  cp(tempfile.path, "public/uploads/#{filename}")
+  puts '1 ++++++++++++++++++++++++++++++++'
+end
+
+post '/file/upload' do
+
+end

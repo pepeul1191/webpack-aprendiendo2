@@ -17,3 +17,4 @@ Fuentes:
 + https://desarrolloweb.com/articulos/servidor-desarrollo-webpack.html
 + https://webpack.js.org/guides/production/
 + https://webpack.js.org/concepts/entry-points/
++ https://medium.com/@chanonroy/webpack-2-and-font-awesome-icon-importing-59df3364f35c
